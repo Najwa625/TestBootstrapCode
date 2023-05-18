@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+function testValidate(){
+	alert("script up");
+	var un=document.valform.name.value;
+	var pwd=document.valform.password.value;
+	var cpwd=document.valform.cpassword.value;
+	if(un==null || un=="")
+		{
+		alert("Enter your name");
+		return false; //stop your page
+		}
+	else if(pwd.length<8 || cpwd.length<8)
+		{
+		alert("Password should be greater than 8 char");
+		return false;
+		}
+	else if(pwd !=cpwd)
+		{
+		alert("Password is not matched");
+		return false;
+		}
+}
+
+
+</script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form name="valform" method="post" action="one.jsp" onsubmit="return testValidate()">
+<table border="1">
+<thead>
+<tr>
+<th>User Name</th>
+<th>Password</th>
+<th>Confirm Password</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><input type="text" name="name"></td>
+<td><input type="password" name="password"></td>
+<td><input type="password" name="cpassword"></td>
+</tr>
+</tbody>
+</table>
+<br><input type="submit" value="validate">
+</form>
+
+</body>
+</html>
